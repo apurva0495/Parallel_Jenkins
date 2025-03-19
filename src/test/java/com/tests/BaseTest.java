@@ -2,6 +2,7 @@ package com.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -17,7 +18,9 @@ public class BaseTest {
             System.out.println("Running on Jenkins... Using System.setProperty()");
             String driverPath = getDriverPath(); // Get driver based on OS
             System.setProperty("webdriver.chrome.driver", driverPath);
-            driver = new ChromeDriver();
+            ChromeOptions options=new ChromeOptions();
+            options.addArguments("--headless");
+            driver = new ChromeDriver(options);
         } else {
             System.out.println("Running locally... Using Selenium Manager.");
             driver = new ChromeDriver(); // Use Selenium Manager for local runs
