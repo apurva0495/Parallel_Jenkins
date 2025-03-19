@@ -20,4 +20,9 @@ public class LoginTest extends BaseTest {
         WebElement productsTitle = driver.findElement(By.xpath("//span[contains(text(),'Products')]"));
         Assert.assertTrue(productsTitle.isDisplayed(), "Login Failed!");
     }
+    
+    @Test
+    public void logintest() {
+    	System.out.println("this is paralle for Logintest");
+    }
 }

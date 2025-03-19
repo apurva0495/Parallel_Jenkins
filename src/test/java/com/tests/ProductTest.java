@@ -22,4 +22,9 @@ public class ProductTest extends BaseTest {
         WebElement cartBadge = driver.findElement(By.className("shopping_cart_badge"));
         Assert.assertTrue(cartBadge.isDisplayed(), "Product not added to cart!");
     }
+    
+    @Test
+    public void ProductTest() {
+    	System.out.println("this is paralle for ProductTest");
+    }
 }
